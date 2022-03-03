@@ -59,6 +59,7 @@ var game = {
 			"glass":loader.loadSound('audio/glassbreak'),
 			"wood":loader.loadSound('audio/woodbreak')
 		};
+		game.dinosaurSound = loader.loadSound("audio/dinosaurRoar")
 
 
 		// Ocultar todas las capas del juego y mostrar la pantalla de inicio
@@ -582,12 +583,13 @@ var entities = {
 				box2d.createRectangle(entity,definition);			   
 				break;	
 			case "hero":	// Círculos simples
+				entity.bounceSound = game.bounceSound;	
 			case "villain": // Pueden ser círculos o rectángulos
 				entity.health = definition.fullHealth;
 				entity.fullHealth = definition.fullHealth;
 				entity.sprite = loader.loadImage("images/entities/"+entity.name+".png");
 				entity.shape = definition.shape;  
-				entity.bounceSound = game.bounceSound;
+				entity.dinosaurSound = game.dinosaurSound;
 				if(definition.shape == "circle"){
 					entity.radius = definition.radius;
 					box2d.createCircle(entity,definition);					
@@ -671,9 +673,10 @@ var box2d = {
 					entity2.health -= impulseAlongNormal;
 				}	
 		
-				// Si los objetos tienen un sonido de rebote, reproducirlos				
-				if (entity1.bounceSound){
-					entity1.bounceSound.play();
+				// Si los objetos tienen un sonido de rebote, reproducirlos		
+				// Cuando se golpea a un dinosario hace un sonido de daño		
+				if (entity1.dinosaurSound){
+					entity1.dinosaurSound.play();
 				}
 
 				if (entity2.bounceSound){
