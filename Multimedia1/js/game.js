@@ -440,6 +440,37 @@ var levels = {
 				{type:"hero", name:"meteorit2",x:80,y:405},
 				{type:"hero", name:"meteorit1",x:140,y:405},
 			]
+		},
+		{   // Tercer nivel
+			foreground:'trees-foreground',
+			background:'earth-background',
+			entities:[
+				{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
+				{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
+	
+
+				{type:"block", name:"wood", x:820,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:620,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:795,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:645,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:720,y:317,width:280,height:25},
+				{type:"block", name:"stone", x:720,y:291,width:120,height:25},	
+				{type:"block", name:"stone", x:720,y:265,width:120,height:25},
+				{type:"block", name:"stone", x:720,y:239,width:120,height:25},
+				{type:"block", name:"wood", x:720,y:213,width:280,height:25},
+				{type:"block", name:"wood", x:830,y:187,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:610,y:187,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:720,y:161,width:280,height:25},
+				
+				
+
+				{type:"villain", name:"greyDinosaur",x:715,y:186,calories:590},
+				{type:"villain", name:"greenDinosaur",x:720,y:405,calories:420},
+
+				{type:"hero", name:"meteorit3",x:30,y:415},
+				{type:"hero", name:"meteorit2",x:80,y:405},
+				{type:"hero", name:"meteorit1",x:140,y:405},
+			]
 		}
 	],
 
@@ -496,7 +527,7 @@ var levels = {
 var entities = {
 	definitions:{
 		"glass":{
-			fullHealth:100,
+			fullHealth:350,
 			density:2.4,
 			friction:0.4,
 			restitution:0.15,
@@ -504,6 +535,12 @@ var entities = {
 		"wood":{
 			fullHealth:500,
 			density:0.7,
+			friction:0.4,
+			restitution:0.4,
+		},
+		"stone":{
+			fullHealth:700,
+			density:1.5,
 			friction:0.4,
 			restitution:0.4,
 		},
@@ -535,6 +572,24 @@ var entities = {
 			fullHealth:50,
 			width:50,
 			height:60,
+			density:1,
+			friction:0.5,
+			restitution:0.6,	
+		},
+		"greyDinosaur":{
+			shape:"rectangle",
+			fullHealth:70,
+			width:70,
+			height:90,
+			density:1,
+			friction:0.5,
+			restitution:0.6,	
+		},
+		"greenDinosaur":{
+			shape:"rectangle",
+			fullHealth:100,
+			width:100,
+			height:70,
 			density:1,
 			friction:0.5,
 			restitution:0.6,	
