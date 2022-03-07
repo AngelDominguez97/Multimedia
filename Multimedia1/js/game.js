@@ -484,10 +484,10 @@ var levels = {
 				{type:"block", name:"wood", x:470,y:180,angle:90,width:100,height:25},
 
 				{type:"block", name:"wood", x:570,y:380,angle:90,width:100,height:25},
-				{type:"block", name:"wood", x:650,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"stone", x:650,y:380,angle:90,width:100,height:25},
 				{type:"block", name:"stone", x:612,y:315,angle:180,width:100,height:25},
 
-				{type:"block", name:"wood", x:730,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"stone", x:730,y:380,angle:90,width:100,height:25},
 				{type:"block", name:"wood", x:810,y:380,angle:90,width:100,height:25},
 				{type:"block", name:"stone", x:768,y:315,angle:180,width:100,height:25},
 
@@ -504,9 +504,9 @@ var levels = {
 				{type:"villain", name:"greyDinosaur",x:768,y:275,calories:420},
 				{type:"villain", name:"greenDinosaur",x:690,y:50,calories:700},
 
-				{type:"hero", name:"meteorit1",x:30,y:415},
+				{type:"hero", name:"meteorit2",x:30,y:415},
 				{type:"hero", name:"meteorit3",x:80,y:405},
-				{type:"hero", name:"meteorit2",x:140,y:405},
+				{type:"hero", name:"meteorit1",x:140,y:405},
 			]
 		}
 	],
@@ -576,9 +576,9 @@ var entities = {
 			restitution:0.4,
 		},
 		"stone":{
-			fullHealth:700,
-			density:1.5,
-			friction:0.4,
+			fullHealth:1000,
+			density:1.0,
+			friction:1.0,
 			restitution:0.4,
 		},
 		"dirt":{
