@@ -471,6 +471,43 @@ var levels = {
 				{type:"hero", name:"meteorit2",x:80,y:405},
 				{type:"hero", name:"meteorit1",x:140,y:405},
 			]
+		},
+		{   // Cuarto nivel
+			foreground:'trees-foreground',
+			background:'earth-background',
+			entities:[
+				{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
+				{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
+	
+				{type:"block", name:"wood", x:470,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:470,y:280,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:470,y:180,angle:90,width:100,height:25},
+
+				{type:"block", name:"wood", x:570,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:650,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"stone", x:612,y:315,angle:180,width:100,height:25},
+
+				{type:"block", name:"wood", x:730,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:810,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"stone", x:768,y:315,angle:180,width:100,height:25},
+
+				{type:"block", name:"wood", x:650,y:250,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:730,y:250,angle:90,width:100,height:25},
+				{type:"block", name:"stone", x:690,y:180,angle:180,width:100,height:25},
+
+				{type:"block", name:"wood", x:650,y:125,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:730,y:125,angle:90,width:100,height:25},
+				{type:"block", name:"stone", x:690,y:75,angle:180,width:100,height:25},
+				
+				{type:"villain", name:"greyDinosaur",x:611,y:275,calories:420},
+				{type:"villain", name:"purpleDinosaur",x:690,y:405,calories:590},
+				{type:"villain", name:"greyDinosaur",x:768,y:275,calories:420},
+				{type:"villain", name:"greenDinosaur",x:690,y:50,calories:700},
+
+				{type:"hero", name:"meteorit1",x:30,y:415},
+				{type:"hero", name:"meteorit3",x:80,y:405},
+				{type:"hero", name:"meteorit2",x:140,y:405},
+			]
 		}
 	],
 
