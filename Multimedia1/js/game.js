@@ -582,7 +582,6 @@ var levels = {
 		let html1 = '<input type="button" value="Soundtrack 1" id="st1"><input type="button" value="Soundtrack 2" id="st2">';
 		$('#settingsScreen').html(html1);
 		$('#settingsScreen input').click(function(e){
-			debugger;
 			levels.changeMusic(this.value-1);
 		});
 		$('#st1').click(function(){
