@@ -39,11 +39,24 @@ $(window).load(function() {
 	game.init();
 });
 
+let identificadorTiempoDeEspera = {
+
+	temporizadorDeRetraso: function() {
+		identificadorTiempoDeEspera = setTimeout(funcionConRetraso, 5000);
+	},
+
+	funcionConRetraso: function() {
+		return true;
+	}
+}
+	
+
 var game = {
 	// Inicialización de objetos, precarga de elementos y pantalla de inicio
 	init: function(){
 		// Inicialización de objetos   
 		levels.init();
+		levels.initSettings();
 		loader.init();
 		mouse.init();
 
@@ -94,6 +107,10 @@ var game = {
 	showLevelScreen:function(){
 		$('.gamelayer').hide();
 		$('#levelselectscreen').show('slow');
+	},
+	showSettingsScreen:function() {
+		$('.gamelayer').hide();
+		$('#settingsScreen').show('slow');
 	},
 	restartLevel:function(){
 		window.cancelAnimationFrame(game.animationFrame);		
@@ -219,13 +236,14 @@ var game = {
 			}
 		}
 
+
 		if (game.mode == "fired"){		
 			//Vista panorámica donde el héroe se encuentra actualmente...
 			var heroX = game.currentHero.GetPosition().x*box2d.scale;
 			game.panTo(heroX);
 
 			//Y esperar hasta que deja de moverse o está fuera de los límites
-			if(!game.currentHero.IsAwake() || heroX<0 || heroX >game.currentLevel.foregroundImage.width ){
+			if(!game.currentHero.IsAwake() || heroX<0 || !identificadorTiempoDeEspera.temporizadorDeRetraso || heroX >game.currentLevel.foregroundImage.width ){
 				// Luego borra el viejo héroe
 				box2d.world.DestroyBody(game.currentHero);
 				game.currentHero = undefined;
@@ -558,6 +576,33 @@ var levels = {
 	   } else {
 		   loader.onload = game.start;
 	   }
+	},
+
+	initSettings:function(){
+		let html1 = '<input type="button" value="Soundtrack 1" id="st1"><input type="button" value="Soundtrack 2" id="st2">';
+		$('#settingsScreen').html(html1);
+		$('#settingsScreen input').click(function(e){
+			debugger;
+			levels.changeMusic(this.value-1);
+		});
+		$('#st1').click(function(){
+			levels.changeMusic(1);
+		});
+		$('#st2').click(function(){
+			levels.changeMusic(0);
+		});
+	},
+
+	changeMusic:function(number){
+		if (number == 1) {
+			game.backgroundMusic = loader.loadSound('audio/ES_Racing-Hearts');
+			$('#settingsScreen').hide();
+			$('#gamestartscreen').show();
+		} else {
+			game.backgroundMusic = loader.loadSound('audio/Miami-Nights-1984-Accelerated')
+			$('#settingsScreen').hide();
+			$('#gamestartscreen').show();
+		}
 	}
 }
 
