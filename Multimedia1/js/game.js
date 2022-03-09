@@ -473,7 +473,6 @@ var levels = {
 				{type:"block", name:"wood", x:645,y:380,angle:90,width:100,height:25},
 				{type:"block", name:"wood", x:720,y:317,width:280,height:25},
 				{type:"block", name:"stone", x:720,y:291,width:120,height:25},	
-				{type:"block", name:"stone", x:720,y:265,width:120,height:25},
 				{type:"block", name:"stone", x:720,y:239,width:120,height:25},
 				{type:"block", name:"wood", x:720,y:213,width:280,height:25},
 				{type:"block", name:"wood", x:830,y:187,angle:90,width:100,height:25},
