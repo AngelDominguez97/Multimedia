@@ -614,14 +614,14 @@ var entities = {
 			restitution:0.15,
 		},
 		"wood":{
-			fullHealth:500,
+			fullHealth:700,
 			density:0.7,
 			friction:0.4,
 			restitution:0.4,
 		},
 		"stone":{
 			fullHealth:1000,
-			density:3.0,
+			density:2.0,
 			friction:1.0,
 			restitution:0.4,
 		},
